@@ -1,22 +1,22 @@
 {
   "project_info": {
-    "project_number": "987486891249",
-    "firebase_url": "https://cp05-dc4a1-default-rtdb.firebaseio.com",
-    "project_id": "cp05-dc4a1",
-    "storage_bucket": "cp05-dc4a1.firebasestorage.app"
+    "project_number": "256549198091",
+    "firebase_url": "https://gsmobile-b94f7-default-rtdb.firebaseio.com",
+    "project_id": "gsmobile-b94f7",
+    "storage_bucket": "gsmobile-b94f7.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:987486891249:android:351fd3c97387727ccf4d50",
+        "mobilesdk_app_id": "1:256549198091:android:917d361276cabbea922a0e",
         "android_client_info": {
-          "package_name": "template.cp05.firebase.permissions"
+          "package_name": "com.skillupplus.mobile"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBlja6IXRyymVngKFLSk-iRlaHtDX2WdI0"
+          "current_key": "AIzaSyCOyEC2z-DSa_YfJkEQAYbjYBLmCvgI6C8"
         }
       ],
       "services": {

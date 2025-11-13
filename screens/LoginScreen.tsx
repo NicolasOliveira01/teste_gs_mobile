@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/AppNavigation';
+import firebaseApp from '../config/firebaseConfig';
 import auth from '@react-native-firebase/auth';
 import { showAlert } from '../config/utils';
 import { COLORS } from '../config/colors';
