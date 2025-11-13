@@ -70,6 +70,8 @@ SKILLUPPLUS2030/
 - Utiliza **Firebase Authentication** (auth().signInWithEmailAndPassword) para login de usuários
 - Validação de email e senha antes da autenticação
 
+<img src="./assets/prints/auth.jpg" alt="Authentication_firebase">
+
 #### 🎯 Fluxo de Login
 - Validação dos campos de entrada
 - Autenticação com **Firebase Auth**
