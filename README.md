@@ -56,12 +56,18 @@ SKILLUPPLUS2030/
 
 ## Telas do projeto:
 
+#### 🎨 Design System Aplicado
+- **Cores:** Azul (#2563EB) transmite confiança e tecnologia (ODS 9)
+- **Layout:** Formulário centralizado para melhor experiência mobile
+- **Tipografia:** Título em destaque para clareza visual
+- **Botões:** Contraste entre primário (azul) e secundário (verde) para hierarquia clara
+
 ### LoginScreen:
-### LoginScreen:
+
 <img src="./assets/prints/LoginScreen.jpg" height="350" alt="Tela de Login">
 
 #### 🔐 Autenticação
-- Utiliza **Firebase Authentication** para login de usuários
+- Utiliza **Firebase Authentication** (auth().signInWithEmailAndPassword) para login de usuários
 - Validação de email e senha antes da autenticação
 
 #### 🎯 Fluxo de Login
