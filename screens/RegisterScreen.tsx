@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, ScrollView, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/AppNavigation';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 import { showAlert } from '../config/utils';
-import { FIAP_COLORS } from '../config/colors';
+import { COLORS } from '../config/colors';
 
 type RegisterScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -17,20 +17,14 @@ type Props = {
 };
 
 export default function RegisterScreen({ navigation }: Props) {
-  // Campos de login
+  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  // Campos pessoais
-  const [nome, setNome] = useState('');
-  const [sobrenome, setSobrenome] = useState('');
-  const [idade, setIdade] = useState('');
-  const [curso, setCurso] = useState('');
-  const [celular, setCelular] = useState('');
-  const [estagio, setEstagio] = useState('');
+  const [confirmarSenha, setConfirmarSenha] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleRegister = async () => {
-    if (!email || !senha || !nome || !sobrenome || !idade ||  !curso || !celular) {
+    if (!nome || !email || !senha || !confirmarSenha ) {
       showAlert('Preencha todos os campos obrigatórios!', 'error');
       return;
     }
@@ -46,6 +40,11 @@ export default function RegisterScreen({ navigation }: Props) {
       return;
     }
 
+    if (senha !== confirmarSenha) {
+      showAlert('As senhas não coincidem!', 'error');
+      return;
+    }
+
     setLoading(true);
     try {
       const userCredential = await auth().createUserWithEmailAndPassword(email, senha);
@@ -53,11 +52,6 @@ export default function RegisterScreen({ navigation }: Props) {
 
       await database().ref(`/users/${userId}`).set({
         nome,
-        sobrenome,
-        idade,
-        curso,
-        celular,
-        estagio: estagio || '',
         email,
         criadoEm: new Date().toISOString(),
       });
@@ -66,59 +60,86 @@ export default function RegisterScreen({ navigation }: Props) {
       navigation.navigate('Login');
     } catch (error: any) {
       console.log(error);
-      showAlert('Erro ao criar conta. Email pode já estar em uso.', 'error');
+      if (error.code === 'auth/email-already-in-use') {
+        showAlert('Este email já está em uso!', 'error');
+      } else {
+        showAlert('Erro ao criar conta. Tente novamente.', 'error');
+      }
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-      <Text style={styles.title}>Cadastro</Text>
+    <ScrollView 
+      contentContainerStyle={styles.container} 
+      keyboardShouldPersistTaps="handled"
+      showsVerticalScrollIndicator={false}
+    >
+      <Text style={styles.title}>Criar Conta</Text>
+      <Text style={styles.subtitle}>Junte-se ao SkillUpPlus 2030+</Text>
 
-      {/* Seção Login */}
-      <Text style={styles.subtitle}>Login</Text>
+      {/* Dados Pessoais */}
+      <TextInput
+        style={styles.input}
+        placeholder="Nome Completo"
+        placeholderTextColor={COLORS.GRAY_400}
+        value={nome}
+        onChangeText={setNome}
+        editable={!loading}
+      />
+
       <TextInput
         style={styles.input}
         placeholder="Email"
-        placeholderTextColor="#aaa"
+        placeholderTextColor={COLORS.GRAY_400}
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
         autoCapitalize="none"
         editable={!loading}
       />
+
       <TextInput
         style={styles.input}
-        placeholder="Senha"
-        placeholderTextColor="#aaa"
+        placeholder="Senha (mín. 6 caracteres)"
+        placeholderTextColor={COLORS.GRAY_400}
         value={senha}
         onChangeText={setSenha}
         secureTextEntry
         editable={!loading}
       />
 
-      {/* Seção Dados Pessoais */}
-      <Text style={styles.subtitle}>Dados Pessoais</Text>
-      <TextInput style={styles.input} placeholder="Nome" placeholderTextColor="#aaa" value={nome} onChangeText={setNome} editable={!loading} />
-      <TextInput style={styles.input} placeholder="Sobrenome" placeholderTextColor="#aaa" value={sobrenome} onChangeText={setSobrenome} editable={!loading} />
-      <TextInput style={styles.input} placeholder="Idade" placeholderTextColor="#aaa" value={idade} onChangeText={setIdade} keyboardType="numeric" editable={!loading} />
-      <TextInput style={styles.input} placeholder="Curso" placeholderTextColor="#aaa" value={curso} onChangeText={setCurso} editable={!loading} />
-      <TextInput style={styles.input} placeholder="Celular" placeholderTextColor="#aaa" value={celular} onChangeText={setCelular} keyboardType="phone-pad" editable={!loading} />
-      <TextInput style={styles.input} placeholder="Estágio (opcional)" placeholderTextColor="#aaa" value={estagio} onChangeText={setEstagio} editable={!loading} />
+      <TextInput
+        style={styles.input}
+        placeholder="Confirmar Senha"
+        placeholderTextColor={COLORS.GRAY_400}
+        value={confirmarSenha}
+        onChangeText={setConfirmarSenha}
+        secureTextEntry
+        editable={!loading}
+      />
 
       {/* Botão Cadastrar */}
       <TouchableOpacity
-        style={[styles.button, { marginTop: 20 }, loading && { opacity: 0.7 }]}
+        style={[styles.button, loading && { opacity: 0.7 }]}
         onPress={handleRegister}
         disabled={loading}
       >
-        {loading ? <ActivityIndicator color="#fff" /> : <Text style={styles.buttonText}>Cadastrar</Text>}
+        {loading ? (
+          <ActivityIndicator color={COLORS.WHITE} />
+        ) : (
+          <Text style={styles.buttonText}>Criar Conta</Text>
+        )}
       </TouchableOpacity>
 
-      {/* Botão Voltar ao Login */}
-      <TouchableOpacity style={[styles.button, { backgroundColor: '#555' }]} onPress={() => navigation.navigate('Login')} disabled={loading}>
-        <Text style={styles.buttonText}>Voltar ao Login</Text>
+      {/* Botão Voltar */}
+      <TouchableOpacity
+        style={[styles.buttonSecondary, loading && { opacity: 0.7 }]}
+        onPress={() => navigation.navigate('Login')}
+        disabled={loading}
+      >
+        <Text style={styles.buttonSecondaryText}>Voltar ao Login</Text>
       </TouchableOpacity>
     </ScrollView>
   );
@@ -127,47 +148,92 @@ export default function RegisterScreen({ navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: FIAP_COLORS.BACKGROUND,
-    alignItems: 'center',
+    backgroundColor: COLORS.BACKGROUND,
     padding: 20,
+    paddingTop: 40,
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: FIAP_COLORS.COLOR,
-    marginBottom: 20,
+    color: COLORS.PRIMARY,
+    marginBottom: 8,
+    textAlign: 'center',
   },
   subtitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: FIAP_COLORS.COLOR,
-    marginTop: 15,
-    marginBottom: 10,
-    alignSelf: 'flex-start',
+    fontSize: 16,
+    color: COLORS.TEXT_SECONDARY,
+    marginBottom: 30,
+    textAlign: 'center',
   },
   input: {
     width: '100%',
     height: 50,
     borderWidth: 1,
-    borderColor: '#555',
-    borderRadius: 8,
+    borderColor: COLORS.BORDER,
+    borderRadius: 10,
     paddingHorizontal: 15,
-    marginBottom: 10,
-    color: '#fff',
-    backgroundColor: '#333',
+    marginBottom: 15,
+    color: COLORS.TEXT_PRIMARY,
+    backgroundColor: COLORS.SURFACE,
+    fontSize: 16,
+  },
+  pickerContainer: {
+    width: '100%',
+    marginBottom: 15,
+  },
+  label: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: COLORS.TEXT_SECONDARY,
+    marginBottom: 8,
+    marginLeft: 4,
+  },
+  picker: {
+    width: '100%',
+    height: 50,
+    borderWidth: 1,
+    borderColor: COLORS.BORDER,
+    borderRadius: 10,
+    backgroundColor: COLORS.SURFACE,
+    overflow: 'hidden',
+  },
+  pickerText: {
+    color: COLORS.TEXT_PRIMARY,
+    fontSize: 16,
   },
   button: {
     width: '100%',
     height: 50,
-    backgroundColor: FIAP_COLORS.COLOR,
-    borderRadius: 8,
+    backgroundColor: COLORS.PRIMARY,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  buttonSecondary: {
+    width: '100%',
+    height: 50,
+    backgroundColor: 'transparent',
+    borderWidth: 2,
+    borderColor: COLORS.SECONDARY,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 18,
+    color: COLORS.WHITE,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  buttonSecondaryText: {
+    color: COLORS.SECONDARY,
+    fontSize: 16,
     fontWeight: 'bold',
   },
 });
