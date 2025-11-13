@@ -58,6 +58,8 @@ SKILLUPPLUS2030/
 
 ### LoginScreen:
 
+![Tela de Login](./assets/prints/LoginScreen.jpg)
+
 #### 🔐 Autenticação
 - Utiliza **Firebase Authentication** para login de usuários
 - Validação de email e senha antes da autenticação
@@ -73,3 +75,6 @@ SKILLUPPLUS2030/
 
 ### HomeScreen:
 
+## Alerts do projeto:
+
+###
