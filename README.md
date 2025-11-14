@@ -85,4 +85,40 @@ SKILLUPPLUS2030/
 
 ## Alerts do projeto:
 
-###
+## Dependências instaladas 
+
+### Firebase: 
+
+```bash
+npx create-expo-app SkillUpPlus --template blank-typescript
+npx expo install expo-dev-client
+npx expo install @react-native-firebase/app @react-native-firebase/auth @react-native-firebase/database  
+npx expo install expo-build-properties
+npx expo prebuild
+```
+
+### React Navigation
+
+```bash
+npx expo install @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+npx expo install @react-navigation/native-stack
+```
+
+### Integração com IA
+
+```bash
+npm install axios
+```
+
+### Toast
+
+``` bash
+npx expo install react-native-toast-message
+```
+
+### Picker
+
+```bash
+npx expo install @react-native-picker/picker
+```
