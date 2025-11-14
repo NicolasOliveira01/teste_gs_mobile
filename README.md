@@ -66,13 +66,13 @@ SKILLUPPLUS2030/
 
 <img src="./assets/prints/LoginScreen.jpg" height="350" alt="Tela de Login">
 
-#### 🔐 Autenticação
+#### 🔐 Autenticação:
 - Utiliza **Firebase Authentication** (auth().signInWithEmailAndPassword) para login de usuários
 - Validação de email e senha antes da autenticação
 
 <img src="./assets/prints/auth.jpg" alt="Authentication_firebase">
 
-#### 🎯 Fluxo de Login
+#### 🎯 Fluxo de Login:
 - Validação dos campos de entrada
 - Autenticação com **Firebase Auth**
 - Redirecionamento para Home em caso de sucesso
@@ -80,6 +80,24 @@ SKILLUPPLUS2030/
 - Redirecionamento para RegisterScreen quando o usuário clicar no botão **Criar conta**
 
 ### RegisterScreen:
+
+<img src="./assets/prints/dados_cadastrais_register.jpg" alt="dados cadastrais">
+
+<img src="./assets/prints/picker_register.jpg" alt="pickers">
+
+ - Usuário preenche os campos **Nome Completo**, **Email**, **Senha**, **Confirmar senha**, **Área de Interesse** e **Nível**
+
+#### Área de Interesse: 
+
+ - **IA**, **Sustentabilidade**, **Soft Skills**, **Gestão**, **Análise de Dados** e **Tecnologia da Informação**
+
+<img src="./assets/prints/area_interesse.jpg" alt="pickers">
+
+#### Nível
+
+ - **Iniciante**, **Intermediário**, **Avançado**
+
+<img src="./assets/prints/nivel.jpg" alt="pickers">
 
 ### HomeScreen:
 
