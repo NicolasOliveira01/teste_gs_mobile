@@ -50,521 +50,807 @@ export const prompts: Record<AreaKey, Record<NivelKey, string>> = {
             Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,      
         intermediario: `
-            Crie um roadmap para nível INTERMEDIÁRIO em IA/Machine Learning:
+            Crie um conteúdo educativo para INTERMEDIÁRIOS em IA/Machine Learning seguindo EXATAMENTE este formato:
 
-            TÓPICOS TÉCNICOS AVANÇADOS:
-            - Algoritmos de ML supervisionado (regressão, classificação) e não-supervisionado (clustering)
-            - Frameworks: TensorFlow, PyTorch, Scikit-learn
-            - Processamento de linguagem natural (NLP) básico com transformers
-            - Fine-tuning de modelos pré-treinados (BERT, GPT)
-            - Métricas de avaliação: precisão, recall, F1-score, AUC-ROC
-            - Feature engineering e seleção de características
+            CONTEÚDO PRINCIPAL:
+            - Explique algoritmos de ML supervisionado e não supervisionado
+            - Detalhe técnicas de pré-processamento e feature engineering
+            - Aborde validação cruzada e métricas de avaliação
+            - Introduza conceitos de overfitting e underfitting
 
-            FERRAMENTAS: Python avançado, Jupyter, Git, APIs de IA, Docker básico
-            PROJETOS: Sistema de recomendação, análise de sentimentos, classificação de texto
-            PRÁTICAS: Versionamento de modelos, deploy simples com Flask/FastAPI
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para intermediários
+            - Foco em aplicações práticas e técnicas apresentadas
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Dominar TensorFlow/PyTorch para redes neurais customizadas",
-                    "2. Implementar algoritmos de NLP: tokenização, embeddings, transformers",
-                    "3. Realizar fine-tuning em modelos como BERT para tarefas específicas",
-                    "4. Desenvolver pipeline completo de ML: dados → treino → deploy",
-                    "5. Criar API REST para servir modelos de ML em produção"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para intermediários em IA",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre técnicas intermediárias de IA",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
         avancado: `
-            Crie um roadmap para nível AVANÇADO em IA/Machine Learning:
+            Crie um conteúdo educativo para AVANÇADOS em IA/Machine Learning seguindo EXATAMENTE este formato:
 
-            ESPECIALIZAÇÕES TÉCNICAS:
-            - Deep Learning avançado: arquiteturas Transformer, GANs, Autoencoders
-            - Computer Vision: detecção de objetos, segmentação semântica
-            - NLP avançado: modelos de linguagem de grande escala, RAG
-            - MLOps: pipelines de CI/CD, monitoramento de modelos, drift detection
-            - Ética e viés em IA: fairness, explainable AI (XAI)
-            - Otimização: pruning, quantization, distributed training
+            CONTEÚDO PRINCIPAL:
+            - Explore arquiteturas complexas de Deep Learning (CNN, RNN, Transformers)
+            - Detalhe técnicas de otimização e fine-tuning de modelos
+            - Aborde ética em IA e vieses em algoritmos
+            - Discuta implementação de modelos em produção (MLOps)
 
-            FERRAMENTAS: Docker, Kubernetes, cloud platforms (AWS SageMaker, GCP AI), MLflow
-            PROJETOS: Modelo de linguagem customizado, sistema de CV em tempo real, pipeline MLOps
-            CICLO COMPLETO: Pesquisa → Desenvolvimento → Deploy → Monitoramento
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para avançados
+            - Foco em conceitos complexos e aplicações avançadas
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Desenvolver arquiteturas neurais customizadas para problemas complexos",
-                    "2. Implementar sistemas de RAG (Retrieval-Augmented Generation) para LLMs",
-                    "3. Construir pipelines MLOps com monitoramento contínuo e retreinamento",
-                    "4. Otimizar modelos para deploy em edge devices e mobile",
-                    "5. Publicar pesquisas ou contribuir para projetos open-source de IA"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para avançados em IA",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre conceitos avançados de IA",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
-        `,
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
+        `
     },
     sustentabilidade: {
         iniciante: `
-            Crie um roadmap para INICIANTES em Sustentabilidade/ESG:
+            Crie um conteúdo educativo para INICIANTES em Sustentabilidade e ESG seguindo EXATAMENTE este formato:
 
-            CONCEITOS FUNDAMENTAIS:
-            - O que é ESG (Environmental, Social, Governance)
-            - Pilares da sustentabilidade: ambiental, social, econômico
-            - Energias renováveis: solar, eólica, hidrelétrica, biomassa
-            - Economia circular e gestão de resíduos
-            - Mudanças climáticas e aquecimento global
-            - Desenvolvimento sustentável e ODS (Objetivos de Desenvolvimento Sustentável)
+            CONTEÚDO PRINCIPAL:
+            - Explique o que é sustentabilidade de forma simples
+            - Diferencie os 3 pilares da sustentabilidade (ambiental, social, econômico)
+            - Introduza conceitos básicos de ESG (Environmental, Social, Governance)
+            - Mostre exemplos práticos de sustentabilidade no dia a dia
 
-            ÁREAS DE ATUAÇÃO: Consultoria ambiental, gestão de resíduos, energia renovável
-            CERTIFICAÇÕES: ISO 14001 básico, LEED Green Associate
-            PROJETOS: Plano de sustentabilidade para pequena empresa, gestão de resíduos domésticos
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para iniciantes
+            - Foco em conceitos fundamentais apresentados
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Compreender os 3 pilares do ESG: Ambiental, Social e Governança",
-                    "2. Estudar fontes de energia renovável e suas aplicações práticas",
-                    "3. Aprender sobre economia circular e gestão de resíduos sólidos",
-                    "4. Desenvolver plano de sustentabilidade para pequena empresa/local",
-                    "5. Conhecer certificações básicas e relatórios de sustentabilidade"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para iniciantes em Sustentabilidade",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre conceitos básicos de sustentabilidade",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         intermediario: `
-            Crie um roadmap para nível INTERMEDIÁRIO em Sustentabilidade/ESG:
+            Crie um conteúdo educativo para INTERMEDIÁRIOS em Sustentabilidade e ESG seguindo EXATAMENTE este formato:
 
-            TÓPICOS TÉCNICOS AVANÇADOS:
-            - Análise de materialidade e stakeholders
-            - Metodologias de relatórios GRI e SASB
-            - Gestão de carbono e pegada ambiental
-            - Economia de baixo carbono e créditos de carbono
-            - Due diligence socioambiental em investimentos
-            - Indicadores de desempenho ESG (KPIs)
-            - Supply chain sustentável e logística reversa
+            CONTEÚDO PRINCIPAL:
+            - Detalhe métricas e indicadores de sustentabilidade (pegada de carbono, LCA)
+            - Explique frameworks de relatórios ESG (GRI, SASB, TCFD)
+            - Aborde gestão de cadeia de suprimentos sustentável
+            - Discuta energias renováveis e eficiência energética
 
-            FERRAMENTAS: Software de gestão ambiental, calculadoras de pegada de carbono
-            CERTIFICAÇÕES: ISO 14001, ISO 50001, LEED AP
-            PROJETOS: Relatório de sustentabilidade corporativo, plano de descarbonização
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para intermediários
+            - Foco em aplicações práticas e métricas de sustentabilidade
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Desenvolver relatórios de sustentabilidade seguindo padrões GRI",
-                    "2. Implementar sistema de gestão ambiental baseado na ISO 14001",
-                    "3. Calcular pegada de carbono corporativa e elaborar plano de redução",
-                    "4. Realizar due diligence ESG para análise de investimentos",
-                    "5. Gerenciar projetos de energia renovável e eficiência energética"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para intermediários em Sustentabilidade",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre práticas intermediárias de sustentabilidade",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         avancado: `
-            Crie um roadmap para nível AVANÇADO em Sustentabilidade/ESG:
+            Crie um conteúdo educativo para AVANÇADOS em Sustentabilidade e ESG seguindo EXATAMENTE este formato:
 
-            ESPECIALIZAÇÕES E LIDERANÇA:
-            - Estratégia corporativa de sustentabilidade integrada ao negócio
-            - Finanças sustentáveis e green bonds
-            - Inovação em tecnologias verdes e cleantech
-            - Políticas públicas e advocacy em sustentabilidade
-            - Gestão de riscos climáticos e adaptação
-            - Economia regenerativa e biodiversidade
-            - Transição energética justa e estratégia net-zero
+            CONTEÚDO PRINCIPAL:
+            - Explore estratégias de economia circular e zero waste
+            - Detalhe investimentos de impacto e green bonds
+            - Aborde due diligence ESG em M&A e investimentos
+            - Discuta regulamentações climáticas (Acordo de Paris, Net Zero)
 
-            LIDERANÇA: CSO (Chief Sustainability Officer), consultor sênior, policymaker
-            CERTIFICAÇÕES: CFA ESG, SASB FSA, cursos avançados em mudanças climáticas
-            IMPACTO: Transformação organizacional, influência em políticas públicas
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para avançados
+            - Foco em estratégias complexas e regulamentações avançadas
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Desenvolver estratégia corporativa de descarbonização e net-zero",
-                    "2. Estruturar operações de finanças sustentáveis e green bonds",
-                    "3. Liderar transformação organizacional rumo à economia circular",
-                    "4. Engajar em políticas públicas e fóruns internacionais de sustentabilidade",
-                    "5. Inovar em modelos de negócio regenerativos e impacto positivo"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para avançados em Sustentabilidade",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre estratégias avançadas de sustentabilidade",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
-        `,
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
+        `
     },
     softSkills: {
         iniciante: `
-            Crie um roadmap para INICIANTES em Soft Skills:
+            Crie um conteúdo educativo para INICIANTES em Soft Skills seguindo EXATAMENTE este formato:
 
-            HABILIDADES FUNDAMENTAIS:
-            - Comunicação clara e objetiva verbal e escrita
-            - Escuta ativa e empatia no ambiente profissional
-            - Trabalho em equipe e colaboração básica
-            - Gestão de tempo simples e organização pessoal
-            - Apresentações eficazes e não-verbal communication
-            - Resolução básica de conflitos interpessoais
+            CONTEÚDO PRINCIPAL:
+            - Explique o que são soft skills e sua importância no mercado de trabalho
+            - Diferencie hard skills e soft skills com exemplos práticos
+            - Introduza comunicação eficaz e escuta ativa
+            - Aborde trabalho em equipe e colaboração básica
 
-            PRÁTICAS ESSENCIAIS: 
-            - Dar e receber feedback construtivo
-            - Participação ativa em reuniões
-            - Networking profissional básico
-            - Adaptabilidade a diferentes personalidades
-
-            FERRAMENTAS: Trello, Google Calendar, técnicas de Pomodoro, agenda organizacional
-            DESENVOLVIMENTO: Cursos online, prática diária, mentoria, auto-reflexão
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para iniciantes
+            - Foco em conceitos fundamentais de soft skills
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Desenvolver comunicação clara: escuta ativa e fala objetiva",
-                    "2. Praticar trabalho em equipe: colaboração e divisão de tarefas",
-                    "3. Aprender gestão de tempo: priorização e técnicas Pomodoro",
-                    "4. Treinar apresentações: estruturação e linguagem corporal",
-                    "5. Desenvolver inteligência emocional: autoconhecimento e empatia"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para iniciantes em Soft Skills",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre conceitos básicos de soft skills",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         intermediario: `
-            Crie um roadmap para nível INTERMEDIÁRIO em Soft Skills:
+            Crie um conteúdo educativo para INTERMEDIÁRIOS em Soft Skills seguindo EXATAMENTE este formato:
 
-            HABILIDADES AVANÇADAS:
-            - Liderança de equipes e gestão de pessoas
-            - Negociação e persuasão em contextos complexos
-            - Gestão de conflitos e mediação profissional
-            - Comunicação assertiva e difícil conversations
-            - Pensamento crítico e resolução de problemas complexos
-            - Gestão de estresse e resiliência profissional
-            - Influência e impacto organizacional
+            CONTEÚDO PRINCIPAL:
+            - Detalhe técnicas de comunicação não-violenta e feedback construtivo
+            - Explique gestão de conflitos e mediação em equipes
+            - Aborde inteligência emocional e autoconhecimento
+            - Discuta apresentações eficazes e storytelling profissional
 
-            APLICAÇÃO PRÁTICA:
-            - Liderar projetos multifuncionais
-            - Facilitação de reuniões e workshops
-            - Mentoria e desenvolvimento de outros colaboradores
-            - Gestão de relacionamento com stakeholders
-            - Tomada de decisão em situações de incerteza
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para intermediários
+            - Foco em aplicações práticas de soft skills intermediárias
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Desenvolver liderança: motivação de equipe e delegação eficaz",
-                    "2. Dominar negociação: técnicas win-win e resolução de impasses",
-                    "3. Aprimorar comunicação assertiva: feedback difícil e limites",
-                    "4. Cultivar pensamento crítico: análise de problemas complexos",
-                    "5. Fortalecer resiliência: gestão de estresse e adaptação a mudanças"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para intermediários em Soft Skills",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre técnicas intermediárias de soft skills",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         avancado: `
-            Crie um roadmap para nível AVANÇADO em Soft Skills:
+            Crie um conteúdo educativo para AVANÇADOS em Soft Skills seguindo EXATAMENTE este formato:
 
-            EXCELÊNCIA E LIDERANÇA EXECUTIVA:
-            - Liderança inspiradora e visão estratégica
-            - Gestão de mudança organizacional e transformação cultural
-            - Comunicação executiva e influência em alto nível
-            - Desenvolvimento de talentos e sucessão organizacional
-            - Inteligência emocional avançada e autoconsciência
-            - Tomada de decisão executiva sob pressão
-            - Networking estratégico e building alliances
-            - Oratória de alto impacto para grandes audiências
+            CONTEÚDO PRINCIPAL:
+            - Explore liderança transformacional e gestão de mudanças
+            - Detalhe negociação complexa e influência estratégica
+            - Aborde gestão de stakeholders e política organizacional
+            - Discuta mentoring, coaching e desenvolvimento de talentos
 
-            IMPACTO ORGANIZACIONAL:
-            - Moldar cultura organizacional e valores
-            - Liderar através de crises e ambiguidade
-            - Desenvolver próximas gerações de líderes
-            - Influenciar direção estratégica da organização
-            - Representar organização em fóruns executivos
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para avançados
+            - Foco em estratégias avançadas de liderança e influência
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Desenvolver liderança executiva: visão estratégica e tomada de decisão",
-                    "2. Dominar comunicação de alto impacto: discursos e apresentações executivas",
-                    "3. Liderar transformação cultural: gestão de mudança organizacional",
-                    "4. Cultivar inteligência emocional avançada: autoconsciência e regulação",
-                    "5. Construir legado: desenvolvimento de sucessores e cultura duradoura"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para avançados em Soft Skills",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre estratégias avançadas de soft skills",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
-        `,
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
+        `
     },
     gestao: {
         iniciante: `
-            Crie um roadmap para INICIANTES em Gestão:
+            Crie um conteúdo educativo para INICIANTES em Gestão seguindo EXATAMENTE este formato:
 
-            FUNDAMENTOS DA GESTÃO:
-            - Ciclo de vida de projetos: iniciação, planejamento, execução, monitoramento, encerramento
-            - Metodologias ágeis: Scrum básico, Kanban, cerimônias e artefatos
-            - Liderança de equipes pequenas e gestão de tarefas
-            - Planejamento e execução de projetos simples
-            - Gestão de stakeholders e comunicação básica
-            - Ferramentas de gestão e produtividade
+            CONTEÚDO PRINCIPAL:
+            - Explique os conceitos básicos de gestão e administração
+            - Diferencie os tipos de gestão (projetos, pessoas, processos)
+            - Introduza o ciclo PDCA (Plan-Do-Check-Act)
+            - Aborde noções básicas de planejamento e organização
 
-            FERRAMENTAS: Trello, Asana, Excel, Google Workspace
-            METODOLOGIAS: Scrum básico, Kanban, gestão tradicional simples
-            PROJETOS: Gerenciar projeto simples de 2-3 pessoas, organização de eventos
-            COMPETÊNCIAS: Organização, comunicação, básico de negociação
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para iniciantes
+            - Foco em conceitos fundamentais de gestão
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Aprender fundamentos de gestão de projetos e ciclo de vida",
-                    "2. Dominar metodologias ágeis: Scrum básico e Kanban prático",
-                    "3. Desenvolver habilidades de liderança para equipes pequenas",
-                    "4. Praticar planejamento: cronogramas, recursos e orçamentos simples",
-                    "5. Gerenciar primeiro projeto completo do início ao fim"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para iniciantes em Gestão",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre conceitos básicos de gestão",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         intermediario: `
-            Crie um roadmap para nível INTERMEDIÁRIO em Gestão:
+            Crie um conteúdo educativo para INTERMEDIÁRIOS em Gestão seguindo EXATAMENTE este formato:
 
-            GESTÃO AVANÇADA E ESTRATÉGICA:
-            - Gestão de portfólio e múltiplos projetos simultâneos
-            - Metodologias híbridas: ágil + tradicional para diferentes contextos
-            - Gestão de riscos e análise qualitativa/quantitativa
-            - Orçamentação avançada e controle de custos
-            - Gestão de mudança organizacional e resistência
-            - Métricas de desempenho: KPIs, OKRs, dashboards
-            - Liderança de equipes multifuncionais e remotas
+            CONTEÚDO PRINCIPAL:
+            - Detalhe metodologias ágeis (Scrum, Kanban) e gestão de projetos
+            - Explique gestão de desempenho e avaliação de resultados
+            - Aborde orçamentação e controle financeiro básico
+            - Discuta gestão de equipes e delegação eficaz
 
-            FERRAMENTAS: Jira, MS Project, Power BI, Slack avançado
-            CERTIFICAÇÕES: PMP, Scrum Master, ITIL Intermediate
-            PROJETOS: Projetos de médio porte, gestão de equipes de 5-10 pessoas
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para intermediários
+            - Foco em técnicas práticas de gestão intermediária
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Gerenciar portfólio de projetos com recursos compartilhados",
-                    "2. Implementar gestão de riscos proativa e planos de contingência",
-                    "3. Desenvolver orçamentos complexos e controle financeiro rigoroso",
-                    "4. Liderar equipes multifuncionais e gestão de desempenho",
-                    "5. Aplicar frameworks como OKRs para alinhamento estratégico"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para intermediários em Gestão",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre técnicas intermediárias de gestão",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         avancado: `
-            Crie um roadmap para nível AVANÇADO em Gestão:
+            Crie um conteúdo educativo para AVANÇADOS em Gestão seguindo EXATAMENTE este formato:
 
-            LIDERANÇA EXECUTIVA E ESTRATÉGICA:
-            - Gestão estratégica e alinhamento com objetivos organizacionais
-            - Transformação digital e gestão da inovação
-            - Governança corporativa e compliance
-            - Gestão de crise e business continuity planning
-            - Liderança executiva: diretor, VP, C-level
-            - M&A (Fusões e Aquisições) e due diligence
-            - Desenvolvimento organizacional e gestão do talento
-            - Orçamento corporativo e alocação de capital
+            CONTEÚDO PRINCIPAL:
+            - Explore estratégia organizacional e gestão da mudança
+            - Detalhe governança corporativa e compliance
+            - Aborde gestão de riscos e tomada de decisão complexa
+            - Discuta liderança executiva e gestão de stakeholders
 
-            COMPETÊNCIAS EXECUTIVAS:
-            - Tomada de decisão estratégica sob incerteza
-            - Relacionamento com board e investidores
-            - Visão sistêmica e pensamento estratégico
-            - Liderança através de transformações profundas
-            - Desenvolvimento de sucessores e pipeline de liderança
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para avançados
+            - Foco em estratégias avançadas e governança corporativa
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Formular e executar estratégia organizacional de longo prazo",
-                    "2. Liderar transformações digitais e iniciativas de inovação disruptiva",
-                    "3. Gerenciar relações com investidores e governança corporativa",
-                    "4. Dirigir operações em escala global e gestão multicultural",
-                    "5. Desenvolver próxima geração de líderes e cultura organizacional"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para avançados em Gestão",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre estratégias avançadas de gestão",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
-        `,
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
+        `
     },
     analiseDados: {
         iniciante: `
-            Crie um roadmap para INICIANTES em Análise de Dados:
+            Crie um conteúdo educativo para INICIANTES em Análise de Dados seguindo EXATAMENTE este formato:
 
-            CONCEITOS ESSENCIAIS:
-            - Estatística descritiva: média, mediana, moda, desvio padrão, variância
-            - Visualização de dados básica: gráficos de barras, linhas, pizza, dispersão
-            - Excel para análise: fórmulas, tabelas dinâmicas, filtros, funções estatísticas
-            - SQL básico: SELECT, WHERE, JOIN, GROUP BY, ORDER BY
-            - Introdução à storytelling com dados e relatórios simples
-            - Qualidade de dados e limpeza básica
+            CONTEÚDO PRINCIPAL:
+            - Explique o que é análise de dados e sua importância nas organizações
+            - Diferencie dados estruturados e não estruturados
+            - Introduza conceitos básicos de estatística descritiva (média, mediana, moda)
+            - Aborde visualização de dados simples com gráficos básicos
 
-            FERRAMENTAS: Excel, Google Sheets, SQLite, Google Data Studio, Tableau Public
-            PROJETOS: Dashboard de vendas, análise de customer behavior, relatório de marketing
-            PRÁTICAS: Limpeza de dados simples, criação de relatórios básicos, interpretação de métricas
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para iniciantes
+            - Foco em conceitos fundamentais de análise de dados
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Dominar Excel: tabelas dinâmicas, funções estatísticas e visualização",
-                    "2. Aprender SQL básico: consultas, filtros e junções em bancos relacionais",
-                    "3. Desenvolver dashboards simples com Google Data Studio ou Power BI",
-                    "4. Praticar estatística descritiva para análise exploratória de dados",
-                    "5. Criar relatórios de negócio com insights acionáveis e visualizações"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para iniciantes em Análise de Dados",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre conceitos básicos de análise de dados",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         intermediario: `
-            Crie um roadmap para nível INTERMEDIÁRIO em Análise de Dados:
+            Crie um conteúdo educativo para INTERMEDIÁRIOS em Análise de Dados seguindo EXATAMENTE este formato:
 
-            TÓPICOS TÉCNICOS AVANÇADOS:
-            - Análise exploratória avançada (EDA) com Python/Pandas
-            - Estatística inferencial: testes de hipótese, intervalos de confiança, p-value
-            - SQL avançado: subqueries, window functions, CTEs, otimização de queries
-            - Visualização com Python: Matplotlib, Seaborn, Plotly, Dash
-            - Limpeza e tratamento de dados em larga escala: missing data, outliers
-            - Análise de séries temporais: tendências, sazonalidade, forecasting básico
-            - Business Intelligence avançado: modelagem dimensional, ETL simples
+            CONTEÚDO PRINCIPAL:
+            - Detalhe técnicas de limpeza e preparação de dados (ETL)
+            - Explique análise exploratória de dados (EDA) avançada
+            - Aborde correlação, regressão e testes de hipóteses
+            - Discuta ferramentas de BI (Power BI, Tableau) e SQL intermediário
 
-            FERRAMENTAS: Python, Pandas, Jupyter Notebook, SQL Server/PostgreSQL, Tableau/Power BI
-            PRÁTICAS: Versionamento com Git, documentação técnica, deploy de dashboards
-            PROJETOS: Análise de cohort, dashboard interativo, pipeline ETL básico
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para intermediários
+            - Foco em técnicas práticas de análise intermediária
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Dominar Python para análise: Pandas, NumPy e bibliotecas de visualização",
-                    "2. Implementar estatística inferencial para tomada de decisão baseada em dados",
-                    "3. Desenvolver queries SQL complexas para extração e transformação de dados",
-                    "4. Criar dashboards interativos e relatórios automatizados com Tableau/Power BI",
-                    "5. Construir pipelines ETL simples e processos de qualidade de dados"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para intermediários em Análise de Dados",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre técnicas intermediárias de análise de dados",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         avancado: `
-            Crie um roadmap para nível AVANÇADO em Análise de Dados:
+            Crie um conteúdo educativo para AVANÇADOS em Análise de Dados seguindo EXATAMENTE este formato:
 
-            ESPECIALIZAÇÕES TÉCNICAS:
-            - Machine Learning para análise: regressão, classificação, clustering, ensemble methods
-            - Estatística multivariada e análise fatorial
-            - Big Data: Spark, Hadoop, processamento distribuído
-            - Data Warehousing e arquitetura de dados: Kimball, Inmon
-            - ETL avançado e orquestração: Airflow, dbt, data pipelines
-            - Otimização e A/B testing em escala
-            - Storytelling com dados avançado e data storytelling executivo
-            - MLOps e deploy de modelos em produção
+            CONTEÚDO PRINCIPAL:
+            - Explore machine learning aplicado à análise preditiva
+            - Detalhe análise de séries temporais e forecasting
+            - Aborde big data e processamento distribuído (Spark, Hadoop)
+            - Discuta data storytelling e tomada de decisão baseada em dados
 
-            FERRAMENTAS: Python avançado, Spark, Airflow, cloud platforms (AWS, GCP, Azure), Docker
-            ARQUITETURA: Design de data lakes, data mesh, sistemas distribuídos
-            LIDERANÇA: Gestão de equipes de analytics, estratégia de dados organizacional
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para avançados
+            - Foco em técnicas avançadas e análise preditiva
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Desenvolver e deployar modelos de machine learning para problemas de negócio",
-                    "2. Arquitetar soluções de Big Data e data pipelines escaláveis",
-                    "3. Liderar estratégia de dados organizacional e governança de dados",
-                    "4. Implementar sistemas de experimentação (A/B testing) em escala",
-                    "5. Otimizar performance de queries e infraestrutura de dados corporativa"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para avançados em Análise de Dados",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre técnicas avançadas de análise de dados",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
-        `,
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
+        `
     },
     ti: {
         iniciante: `
-            Crie um roadmap para INICIANTES em Tecnologia da Informação:
+            Crie um conteúdo educativo para INICIANTES em Tecnologia da Informação seguindo EXATAMENTE este formato:
 
-            FUNDAMENTOS TÉCNICOS:
-            - Redes de computadores: conceitos básicos, TCP/IP, DNS, HTTP/HTTPS
-            - Sistemas operacionais: Windows e Linux (comandos básicos, administração)
-            - Suporte técnico e helpdesk: troubleshooting, atendimento ao usuário
-            - Segurança da informação básica: antivírus, firewalls, boas práticas
-            - Virtualização e cloud computing: conceitos de IaaS, PaaS, SaaS
-            - Hardware: componentes, montagem, manutenção preventiva
-            - Backup e recuperação de dados: estratégias básicas
+            CONTEÚDO PRINCIPAL:
+            - Explique os conceitos básicos de TI e infraestrutura de tecnologia
+            - Diferencie hardware, software e sistemas operacionais
+            - Introduza redes de computadores e conceitos de internet
+            - Aborde noções básicas de segurança da informação e cibersegurança
 
-            CERTIFICAÇÕES: CompTIA A+, ITIL Foundation, Microsoft Fundamentals
-            FERRAMENTAS: Active Directory básico, ferramentas de monitoramento, Office 365
-            CARREIRAS: Suporte técnico, helpdesk, administrador de sistemas júnior
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para iniciantes
+            - Foco em conceitos fundamentais de tecnologia da informação
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Dominar fundamentos de redes: protocolos, configuração e troubleshooting",
-                    "2. Aprender administração de sistemas Windows e Linux básica",
-                    "3. Desenvolver habilidades de suporte técnico e atendimento ao usuário",
-                    "4. Implementar segurança básica: antivírus, backups e políticas",
-                    "5. Praticar virtualização e conceitos de cloud computing"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para iniciantes em Tecnologia da Informação",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre conceitos básicos de TI",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         intermediario: `
-            Crie um roadmap para nível INTERMEDIÁRIO em Tecnologia da Informação:
+            Crie um conteúdo educativo para INTERMEDIÁRIOS em Tecnologia da Informação seguindo EXATAMENTE este formato:
 
-            ESPECIALIZAÇÕES TÉCNICAS:
-            - Administração de servidores: Windows Server, Linux Server
-            - Redes avançadas: switching, routing, VLANs, VPNs, segurança de rede
-            - Cloud computing: AWS, Azure ou GCP (serviços core)
-            - Virtualização avançada: VMware, Hyper-V, containers (Docker)
-            - Segurança: firewalls, IDS/IPS, gestão de vulnerabilidades
-            - Scripting e automação: PowerShell, Bash, Python para administração
-            - Monitoramento e performance: Zabbix, Nagios, Grafana
+            CONTEÚDO PRINCIPAL:
+            - Detalhe administração de sistemas e redes corporativas
+            - Explique virtualização e conceitos de cloud computing
+            - Aborde gestão de bancos de dados e administração de BD
+            - Discuta DevOps básico e pipelines de CI/CD
 
-            CERTIFICAÇÕES: CCNA, AWS Solutions Architect, RHCSA, Security+
-            FERRAMENTAS: Docker, Ansible, Git, ferramentas de monitoring enterprise
-            CARREIRAS: Administrador de sistemas, analista de cloud, engenheiro de redes
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para intermediários
+            - Foco em administração de sistemas e infraestrutura
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Especializar-se em administração de servidores Windows/Linux enterprise",
-                    "2. Dominar redes corporativas: switching, routing e segurança avançada",
-                    "3. Implementar soluções cloud: AWS/Azure com arquitetura bem fundamentada",
-                    "4. Desenvolver automação com scripting e ferramentas DevOps básicas",
-                    "5. Gerenciar segurança corporativa: firewalls, compliance e políticas"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para intermediários em Tecnologia da Informação",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre administração de sistemas e infraestrutura",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
         `,
+
         avancado: `
-            Crie um roadmap para nível AVANÇADO em Tecnologia da Informação:
+            Crie um conteúdo educativo para AVANÇADOS em Tecnologia da Informação seguindo EXATAMENTE este formato:
 
-            ARQUITETURA E LIDERANÇA TÉCNICA:
-            - Arquitetura de soluções: design de sistemas escaláveis e resilientes
-            - DevOps e SRE: CI/CD, infraestrutura como código, GitOps
-            - Segurança avançada: SOC, gestão de identidade, compliance, pentesting
-            - Cloud native: microservices, Kubernetes, service mesh, serverless
-            - Gestão de datacenters e infraestrutura híbrida
-            - Transformação digital e estratégia tecnológica
-            - Orçamento e gestão de vendors em escala enterprise
-            - Liderança técnica e gestão de equipes de TI
+            CONTEÚDO PRINCIPAL:
+            - Explore arquitetura de soluções em nuvem (AWS, Azure, GCP)
+            - Detalhe segurança cibernética avançada e ethical hacking
+            - Aborde arquitetura de microserviços e containers (Docker, Kubernetes)
+            - Discuta governança de TI e transformação digital corporativa
 
-            CERTIFICAÇÕES: CCIE, AWS/Azure Solutions Architect Professional, CISSP, PMP
-            FERRAMENTAS: Kubernetes, Terraform, Jenkins, SIEM, ferramentas enterprise
-            CARREIRAS: Arquiteto de soluções, Engenheiro DevOps Sênior, CTO, Diretor de TI
+            QUESTÃO DE VERIFICAÇÃO:
+            Crie UMA questão objetiva para testar o entendimento do conteúdo.
+            A questão deve ter:
+            - 5 alternativas (A, B, C, D, E)
+            - Apenas UMA alternativa correta
+            - Dificuldade adequada para avançados
+            - Foco em arquitetura cloud e segurança avançada
 
             FORMATO JSON EXATO:
             {
-                "roadmap": [
-                    "1. Arquitetar soluções enterprise: cloud híbrida, microservices, alta disponibilidade",
-                    "2. Liderar transformação DevOps: CI/CD, infraestrutura como código, SRE",
-                    "3. Dirigir estratégia de segurança: SOC, compliance, gestão de riscos corporativos",
-                    "4. Gerenciar orçamentos multimilionários e relações com vendors estratégicos",
-                    "5. Desenvolver estratégia tecnológica alinhada aos objetivos de negócio"
-                ]
+                "conteudo": {
+                    "titulo": "Título do conteúdo para avançados em Tecnologia da Informação",
+                    "topicos": [
+                        "Texto explicativo do tópico 1",
+                        "Texto explicativo do tópico 2", 
+                        "Texto explicativo do tópico 3"
+                    ],
+                    "exemplos": [
+                        "Exemplo prático 1",
+                        "Exemplo prático 2"
+                    ]
+                },
+                "questao": {
+                    "pergunta": "Texto da pergunta sobre arquitetura cloud e segurança avançada",
+                    "alternativas": {
+                        "A": "Texto da alternativa A",
+                        "B": "Texto da alternativa B",
+                        "C": "Texto da alternativa C", 
+                        "D": "Texto da alternativa D",
+                        "E": "Texto da alternativa E"
+                    },
+                    "correta": "A"
+                }
             }
 
-            Retorne APENAS o JSON, sem markdown, sem texto adicional.
-        `,
+            Retorne APENAS o JSON válido, sem markdown, sem texto adicional.
+        `
     }
 }
 
