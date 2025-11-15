@@ -1,4 +1,3 @@
-// CoursesScreen.tsx - COM BARRA DE PROGRESSO
 import React, { useState, useEffect } from 'react';
 import { 
   View, 
@@ -39,7 +38,6 @@ export default function CoursesScreen({ navigation }: Props) {
   const [nivelSelecionado, setNivelSelecionado] = useState('');
   const [adicionandoCurso, setAdicionandoCurso] = useState(false);
 
-  // Mapeamento de cores e nomes
   const areaColors: { [key: string]: string } = {
     'ia': '#8B5CF6',
     'sustentabilidade': '#059669',
@@ -64,10 +62,8 @@ export default function CoursesScreen({ navigation }: Props) {
     'avancado': '💎 Avançado'
   };
 
-  // Constantes para progresso
-  const TOTAL_CURSOS = 15; // 6 áreas × 3 níveis
+  const TOTAL_CURSOS = 15; 
 
-  // Calcular progresso
   const cursosConcluidos = Object.values(cursos).filter(
     curso => curso.concluido === true
   ).length;
@@ -82,7 +78,6 @@ export default function CoursesScreen({ navigation }: Props) {
     });
   };
 
-  // Buscar cursos do usuário
   useEffect(() => {
     const userId = auth().currentUser?.uid;
     if (userId) {
@@ -100,7 +95,6 @@ export default function CoursesScreen({ navigation }: Props) {
       return;
     }
 
-    // Verificar se já existe este curso
     const cursoExistente = Object.values(cursos).find(
       curso => curso.area === areaSelecionada && curso.nivel === nivelSelecionado
     );
@@ -115,7 +109,6 @@ export default function CoursesScreen({ navigation }: Props) {
       const userId = auth().currentUser?.uid;
       if (!userId) return;
 
-      // Gerar novo ID de curso (Course1, Course2, etc.)
       const novoCourseId = `Course${Object.keys(cursos).length + 1}`;
 
       await database().ref(`/users/${userId}/Courses/${novoCourseId}`).set({
@@ -136,7 +129,6 @@ export default function CoursesScreen({ navigation }: Props) {
     }
   };
 
-  // Gerar combinações disponíveis
   const areas = ['ia', 'sustentabilidade', 'softSkills', 'gestao', 'analiseDados', 'ti'];
   const niveis = ['iniciante', 'intermediario', 'avancado'];
 
@@ -295,7 +287,6 @@ export default function CoursesScreen({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  // NOVOS ESTILOS PARA BARRA DE PROGRESSO
   progressContainer: {
     backgroundColor: 'white',
     padding: 20,
@@ -345,7 +336,6 @@ const styles = StyleSheet.create({
     color: '#059669',
     fontWeight: 'bold',
   },
-  // ESTILOS EXISTENTES (mantidos iguais)
   cursoCard: {
     padding: 15,
     borderRadius: 10,

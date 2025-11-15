@@ -1,4 +1,3 @@
-// screens/CourseContentScreen.tsx - VERSÃO CORRIGIDA
 import React, { useState, useEffect } from 'react';
 import { 
   View, 
@@ -63,7 +62,6 @@ export default function CourseContentScreen({ route, navigation }: Props) {
   const [acertou, setAcertou] = useState(false);
   const [atualizandoConclusao, setAtualizandoConclusao] = useState(false);
 
-  // Buscar conteúdo do Gemini
   useEffect(() => {
     const carregarConteudo = async () => {
       try {
@@ -81,7 +79,6 @@ export default function CourseContentScreen({ route, navigation }: Props) {
     carregarConteudo();
   }, [area, nivel]);
 
-  // Função para verificar resposta
   const verificarResposta = async () => {
     if (!respostaSelecionada || !conteudoCompleto) return;
 
@@ -89,7 +86,6 @@ export default function CourseContentScreen({ route, navigation }: Props) {
     setAcertou(respostaCorreta);
     setQuestaoRespondida(true);
 
-    // ✅ SÓ marca como concluído se acertou
     if (respostaCorreta) {
       await marcarCursoComoConcluido();
       showAlert('🎉 Parabéns! Você acertou e concluiu este curso!', 'success');
@@ -98,7 +94,6 @@ export default function CourseContentScreen({ route, navigation }: Props) {
     }
   };
 
-  // Marcar curso como concluído no Firebase
   const marcarCursoComoConcluido = async () => {
     try {
       setAtualizandoConclusao(true);
@@ -115,7 +110,6 @@ export default function CourseContentScreen({ route, navigation }: Props) {
     }
   };
 
-  // Reiniciar questão
   const reiniciarQuestao = () => {
     setRespostaSelecionada('');
     setQuestaoRespondida(false);
@@ -177,11 +171,8 @@ export default function CourseContentScreen({ route, navigation }: Props) {
             key={letra}
             style={[
               styles.alternativaButton,
-              // ✅ SÓ mostra selecionada quando está selecionada (antes de responder)
               respostaSelecionada === letra && !questaoRespondida && styles.alternativaSelecionada,
-              // ✅ SÓ mostra correta quando usuário ACERTOU
               questaoRespondida && acertou && letra === conteudoCompleto.questao.correta && styles.alternativaCorreta,
-              // ✅ SÓ mostra incorreta quando usuário ERROU e essa foi a selecionada
               questaoRespondida && !acertou && respostaSelecionada === letra && styles.alternativaIncorreta
             ]}
             onPress={() => !questaoRespondida && setRespostaSelecionada(letra)}
@@ -216,7 +207,7 @@ export default function CourseContentScreen({ route, navigation }: Props) {
             <Text style={acertou ? styles.resultadoAcerto : styles.resultadoErro}>
               {acertou ? '✅ Parabéns! Você acertou!' : '❌ Resposta incorreta'}
             </Text>
-            {!acertou && ( // ✅ SÓ mostra botão "Tentar Novamente" se errou
+            {!acertou && (
               <TouchableOpacity
                 style={styles.botaoReiniciar}
                 onPress={reiniciarQuestao}

@@ -78,7 +78,6 @@ export default function RegisterScreen({ navigation }: Props) {
 
       showAlert('Conta criada com sucesso!', 'success');
       
-      // ✅ VAI DIRETO PARA COURSES SEM PARÂMETROS
       navigation.navigate('Courses');
       
     } catch (error: any) {

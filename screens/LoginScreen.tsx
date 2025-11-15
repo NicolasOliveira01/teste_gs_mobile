@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator 
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/AppNavigation';
 import auth from '@react-native-firebase/auth';
-import database from '@react-native-firebase/database'; // ← ADICIONAR ESTA LINHA
+import database from '@react-native-firebase/database';
 import { showAlert } from '../config/utils';
 import { COLORS } from '../config/colors';
 
@@ -45,7 +45,6 @@ export default function LoginScreen({ navigation }: Props) {
       
       console.log('Usuário logado:', userId);
       
-      // ✅ BUSCAR DADOS DO USUÁRIO NO FIREBASE
       const userSnapshot = await database().ref(`/users/${userId}`).once('value');
       const userData = userSnapshot.val();
       
@@ -53,7 +52,6 @@ export default function LoginScreen({ navigation }: Props) {
       
       showAlert('Login realizado com sucesso!', 'success');
       
-      // ✅ NAVEGAR PARA CONTENT COM OS DADOS DO FIREBASE
       navigation.navigate('Courses');
       
     } catch (error: any) {
@@ -65,7 +63,7 @@ export default function LoginScreen({ navigation }: Props) {
   };
 
   const handleRegister = () => {
-    navigation.navigate('Register'); // ← CORRIGIDO: deve ir para Register, não Content
+    navigation.navigate('Register'); 
   };
 
   return (

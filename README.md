@@ -51,9 +51,10 @@ SKILLUPPLUS2030/
 │    └── prompts.ts
 │
 ├── screens/
-│   ├── ContentScreen.tsx
-│   ├── LoginScreen.tsx
-│   └── RegisterScreen.tsx
+│    ├── CourseContentScreen.tsx
+│    ├── CoursesScreen.tsx
+│    ├── LoginScreen.tsx
+│    └── RegisterScreen.tsx
 │
 ├── services/
 │    └── aiService.ts
@@ -125,15 +126,26 @@ Autoavaliação do usuário na área escolhida:
 await database().ref(`/users/${userId}`).set({
         nome,
         email,
-        areaInteresse,
-        nivelArea,
         criadoEm: new Date().toISOString(),
+        Courses: {
+          Course1: {
+            area: areaInteresse,
+            nivel: nivelArea,
+            cor: areaColors[areaInteresse] || '#666666',
+            concluido: false,
+          }
+        }
       });
 ```
+--- 
 
-## ContentScreen:
+### CoursesScreen:
 
+<img src="./assets/prints/CoursesScreen.jpg" height="450" alt="Tela de Login">
 
+#### Barra de conclusão 
+
+### CourseContentScreen:
 
 ## Alerts do projeto:
 
