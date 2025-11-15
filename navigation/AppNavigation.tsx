@@ -5,13 +5,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import CoursesScreen from '../screens/CoursesScreen';
-import CourseContentScreen from '../screens/CourseContentScreen'; // ← NOVA TELA
+import CourseContentScreen from '../screens/CourseContentScreen';
 
 export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
   Courses: undefined;
-  CourseContent: { // ← NOVA ROTA
+  CourseContent: {
     courseId: string;
     area: string;
     nivel: string;

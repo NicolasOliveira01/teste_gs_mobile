@@ -40,6 +40,10 @@ npx expo start -c
 ```
 SKILLUPPLUS2030/
 │
+├── assets
+│   └── prints
+│       └── {...}
+│
 ├── config/
 │   ├── colors.ts
 │   └── utils.ts
@@ -63,6 +67,42 @@ SKILLUPPLUS2030/
 ├── google-service.json
 └── index.ts
 ```
+
+# Arquivos do projeto
+
+## Arquivos imporantes
+
+### assets/prints:
+
+ - Pasta que possui todas as prints que foram usadas na documentação
+
+### colors.ts:
+
+ - Arquivo que possui todas as cores que foram usadas no projeto
+ - **COLORS** é importado nas telas e usado **COLORS.{nome_cor}**
+
+### utils.ts:
+
+ - Arquivo para estilizar os alerts do projeto
+
+### navigation/AppNavigation:
+
+ - Arquivo que define a navegação entre as telas do projeto
+
+### prompts/prompts.ts:
+
+ - Arquivo que possui todos os prompts específico para cada **área de interesse** e **nível** que vão ser usado no **Google Gemini** para gerar o conteúdo dos Cursos 
+
+### services/aiService.ts:
+
+ - Arquivo que faz integração com o **Google Gemini** para gerar o conteúdo dos cursos
+
+### google-services.json
+
+ - Arquivo de configuração do Firebase para o app
+ - Identifica qual projeto Firebase seu app pertence
+ - Configura automaticamente todos os serviços (Auth, RealTime Database)
+ - Permite a comunicação segura entre app e Firebase
 
 ## Telas do projeto:
 
@@ -172,6 +212,8 @@ Autoavaliação do usuário na área escolhida:
 <img src="./assets/prints/errou_questao.jpg" height="400" alt="Tela de Login">
 
 <img src="./assets/prints/acertou_questao.jpg" height="400" alt="Tela de Login">
+
+--- 
 
 ## Alerts do projeto:
 
