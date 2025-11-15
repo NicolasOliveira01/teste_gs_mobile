@@ -1,4 +1,4 @@
-// screens/CourseContentScreen.tsx
+// screens/CourseContentScreen.tsx - VERSÃO CORRIGIDA
 import React, { useState, useEffect } from 'react';
 import { 
   View, 
@@ -6,8 +6,7 @@ import {
   StyleSheet, 
   ActivityIndicator, 
   TouchableOpacity, 
-  ScrollView,
-  Alert 
+  ScrollView
 } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/AppNavigation';
@@ -90,8 +89,8 @@ export default function CourseContentScreen({ route, navigation }: Props) {
     setAcertou(respostaCorreta);
     setQuestaoRespondida(true);
 
+    // ✅ SÓ marca como concluído se acertou
     if (respostaCorreta) {
-      // Atualizar curso como concluído no Firebase
       await marcarCursoComoConcluido();
       showAlert('🎉 Parabéns! Você acertou e concluiu este curso!', 'success');
     } else {
@@ -178,16 +177,21 @@ export default function CourseContentScreen({ route, navigation }: Props) {
             key={letra}
             style={[
               styles.alternativaButton,
-              respostaSelecionada === letra && styles.alternativaSelecionada,
-              questaoRespondida && letra === conteudoCompleto.questao.correta && styles.alternativaCorreta,
-              questaoRespondida && respostaSelecionada === letra && !acertou && styles.alternativaIncorreta
+              // ✅ SÓ mostra selecionada quando está selecionada (antes de responder)
+              respostaSelecionada === letra && !questaoRespondida && styles.alternativaSelecionada,
+              // ✅ SÓ mostra correta quando usuário ACERTOU
+              questaoRespondida && acertou && letra === conteudoCompleto.questao.correta && styles.alternativaCorreta,
+              // ✅ SÓ mostra incorreta quando usuário ERROU e essa foi a selecionada
+              questaoRespondida && !acertou && respostaSelecionada === letra && styles.alternativaIncorreta
             ]}
             onPress={() => !questaoRespondida && setRespostaSelecionada(letra)}
             disabled={questaoRespondida}
           >
             <Text style={[
               styles.alternativaTexto,
-              respostaSelecionada === letra && styles.alternativaTextoSelecionado
+              respostaSelecionada === letra && !questaoRespondida && styles.alternativaTextoSelecionado,
+              questaoRespondida && acertou && letra === conteudoCompleto.questao.correta && styles.alternativaTextoCorreto,
+              questaoRespondida && !acertou && respostaSelecionada === letra && styles.alternativaTextoIncorreto
             ]}>
               {letra}. {texto}
             </Text>
@@ -212,12 +216,14 @@ export default function CourseContentScreen({ route, navigation }: Props) {
             <Text style={acertou ? styles.resultadoAcerto : styles.resultadoErro}>
               {acertou ? '✅ Parabéns! Você acertou!' : '❌ Resposta incorreta'}
             </Text>
-            <TouchableOpacity
-              style={styles.botaoReiniciar}
-              onPress={reiniciarQuestao}
-            >
-              <Text style={styles.botaoReiniciarTexto}>Tentar Novamente</Text>
-            </TouchableOpacity>
+            {!acertou && ( // ✅ SÓ mostra botão "Tentar Novamente" se errou
+              <TouchableOpacity
+                style={styles.botaoReiniciar}
+                onPress={reiniciarQuestao}
+              >
+                <Text style={styles.botaoReiniciarTexto}>Tentar Novamente</Text>
+              </TouchableOpacity>
+            )}
           </View>
         )}
       </View>
@@ -359,6 +365,14 @@ const styles = StyleSheet.create({
   alternativaTextoSelecionado: {
     fontWeight: 'bold',
     color: '#2563EB',
+  },
+  alternativaTextoCorreto: {
+    fontWeight: 'bold',
+    color: '#059669',
+  },
+  alternativaTextoIncorreto: {
+    fontWeight: 'bold',
+    color: '#dc2626',
   },
   botaoVerificar: {
     backgroundColor: '#2563EB',
