@@ -137,13 +137,21 @@ await database().ref(`/users/${userId}`).set({
         }
       });
 ```
+
+<img src="./assets/prints/database_apos_create_account.jpg" alt="Tela de Login">
+
 --- 
 
 ### CoursesScreen:
 
 <img src="./assets/prints/CoursesScreen.jpg" height="450" alt="Tela de Login">
 
-#### Barra de conclusão 
+#### Barra de conclusão:
+
+ - Barra de conclusão muda conforme o usuário vai concluindo cursos 
+ - Usuário consegue **monitor o seu progresso**
+
+<img src="./assets/prints/barra_conclusao_cursos.jpg" alt="Tela de Login">
 
 ### CourseContentScreen:
 
