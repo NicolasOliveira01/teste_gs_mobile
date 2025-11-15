@@ -1,4 +1,4 @@
-// ContentScreen.tsx - COM SCROLL
+// CoursesScreen.tsx - COM SCROLL
 import React, { useState, useEffect } from 'react';
 import { 
   View, 
@@ -12,13 +12,13 @@ import { RootStackParamList } from '../navigation/AppNavigation';
 
 import { generateLearningContent } from '../services/aiService';
 
-type ContentScreenNavigationProp = NativeStackNavigationProp<
+type CoursesScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'Content'
+  'Courses'
 >;
 
 type Props = {
-  navigation: ContentScreenNavigationProp;
+  navigation: CoursesScreenNavigationProp;
   route: {
     params?: {
       userData?: {
@@ -30,7 +30,7 @@ type Props = {
   };
 };
 
-export default function ContentScreen({ route }: Props) {
+export default function CoursesScreen({ route }: Props) {
   const [conteudo, setConteudo] = useState<any>(null);
   const [carregando, setCarregando] = useState(false);
 
@@ -63,7 +63,7 @@ export default function ContentScreen({ route }: Props) {
     // ✅ ENVOLVA TUDO EM SCROLLVIEW
     <ScrollView style={{ flex: 1 }} contentContainerStyle={{ padding: 20 }}>
       <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 20 }}>
-        Conteúdo para {userData.areaInteresse} - {userData.nivelArea}
+        Trilhas
       </Text>
 
       {carregando && (
@@ -78,9 +78,9 @@ export default function ContentScreen({ route }: Props) {
           <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>
             🎯 Roadmap:
           </Text>
-          {conteudo.roadmap.map((passo: string, index: number) => (
+          {/* {conteudo.roadmap.map((passo: string, index: number) => (
             <Text key={index} style={{ marginBottom: 8, lineHeight: 20 }}>• {passo}</Text>
-          ))}
+          ))} */}
         </View>
       )}
 

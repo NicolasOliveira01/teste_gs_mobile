@@ -10,13 +10,6 @@ export const COLORS = {
   SECONDARY_LIGHT: '#34D399',
   SECONDARY_DARK: '#059669',
   
-  // Cores das áreas de interesse
-  IA: '#8B5CF6',          // Roxo - criatividade, inovação (IA)
-  SUSTENTABILIDADE: '#059669', // Verde - natureza, ESG
-  SOFT_SKILLS: '#F59E0B', // Âmbar - energia, comunicação
-  GESTAO: '#DC2626',      // Vermelho - ação, liderança
-  DADOS: '#0369A1',       // Azul escuro - conhecimento, análise
-  
   // Cores de estado
   SUCCESS: '#10B981',
   ERROR: '#EF4444',

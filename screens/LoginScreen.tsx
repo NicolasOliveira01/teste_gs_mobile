@@ -54,14 +54,7 @@ export default function LoginScreen({ navigation }: Props) {
       showAlert('Login realizado com sucesso!', 'success');
       
       // ✅ NAVEGAR PARA CONTENT COM OS DADOS DO FIREBASE
-      navigation.navigate('Content', {
-        userData: {
-          nome: userData.nome,
-          email: userData.email,
-          areaInteresse: userData.areaInteresse,
-          nivelArea: userData.nivelArea
-        }
-      });
+      navigation.navigate('Courses');
       
     } catch (error: any) {
       console.log(error);

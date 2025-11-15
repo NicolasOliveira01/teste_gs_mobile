@@ -27,12 +27,12 @@ export default function RegisterScreen({ navigation }: Props) {
   const [loading, setLoading] = useState(false);
 
   const handleRegister = async () => {
-  if (!nome || !email || !senha || !confirmarSenha || !areaInteresse || !nivelArea) {
-    showAlert('Preencha todos os campos obrigatórios!', 'error');
-    return;
-  }
+    if (!nome || !email || !senha || !confirmarSenha || !areaInteresse || !nivelArea) {
+      showAlert('Preencha todos os campos obrigatórios!', 'error');
+      return;
+    }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       showAlert('Email inválido!', 'error');
       return;
@@ -53,28 +53,36 @@ export default function RegisterScreen({ navigation }: Props) {
       const userCredential = await auth().createUserWithEmailAndPassword(email, senha);
       const userId = userCredential.user.uid;
 
+      const areaColors: { [key: string]: string } = {
+        'ia': '#8B5CF6',
+        'sustentabilidade': '#059669',
+        'softSkills': '#F59E0B',
+        'gestao': '#DC2626',
+        'analiseDados': '#0369A1',
+        'ti': '#2563EB'
+      };
+
       await database().ref(`/users/${userId}`).set({
         nome,
         email,
-        areaInteresse,
-        nivelArea,
         criadoEm: new Date().toISOString(),
+        Courses: {
+          Course1: {
+            area: areaInteresse,
+            nivel: nivelArea,
+            cor: areaColors[areaInteresse] || '#666666',
+            concluido: false,
+          }
+        }
       });
 
       showAlert('Conta criada com sucesso!', 'success');
       
-      // ✅ CORREÇÃO: VAI DIRETO PARA CONTENT
-      navigation.navigate('Content', {
-        userData: {
-          nome,
-          email,
-          areaInteresse,
-          nivelArea
-        }
-      });
+      // ✅ VAI DIRETO PARA COURSES SEM PARÂMETROS
+      navigation.navigate('Courses');
       
     } catch (error: any) {
-      console.log(error);
+      console.log('Erro detalhado:', error);
       if (error.code === 'auth/email-already-in-use') {
         showAlert('Este email já está em uso!', 'error');
       } else {

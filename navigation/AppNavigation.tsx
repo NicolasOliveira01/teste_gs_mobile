@@ -4,20 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
-import ContentScreen from '../screens/ContentScreen';
+import CoursesScreen from '../screens/CoursesScreen';
 
 export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
-  Home: undefined;
-  Content: {
-    userData?: {
-      nome?: string;
-      email?: string; 
-      areaInteresse: string;
-      nivelArea: string;
-    }
-  };
+  Courses: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -48,9 +40,9 @@ export default function AppNavigator() {
         options={{ title: 'Criar Conta' }}
       />
       <Stack.Screen 
-        name="Content" 
-        component={ContentScreen}
-        options={{ title: 'Meu Conteúdo' }}
+        name="Courses" 
+        component={CoursesScreen}
+        options={{ title: 'Minhas Trilhas' }}
       />
     </Stack.Navigator>
   );
